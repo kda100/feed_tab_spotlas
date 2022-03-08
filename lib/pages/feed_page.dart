@@ -51,7 +51,6 @@ class _FeedPageState extends State<FeedPage> {
           }
           return ListView.builder(
             //posts.
-            shrinkWrap: true,
             itemCount: feedProvider.numberOfPosts,
             itemBuilder: (context, index) {
               return PostWidget(
