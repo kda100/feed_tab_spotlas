@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-///Animation that pops up a heart that disappears.
+///Animation that pops up a heart then disappears.
 ///used for post widget.
 
 class LikedAnimation extends StatelessWidget {
