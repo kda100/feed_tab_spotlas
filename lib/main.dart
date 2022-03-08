@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations(
+  SystemChrome.setPreferredOrientations( //prevents rotation.
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
 }
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.grey.shade400,
               ),
               bodyText2: const TextStyle(color: Colors.black))),
-      home: ChangeNotifierProvider(
+      home: ChangeNotifierProvider( //state management for feed.
         create: (context) => FeedProvider(),
         child: FeedPage(),
       ),
