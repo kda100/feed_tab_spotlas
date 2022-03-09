@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:front_developer_test/models/author.dart';
 import 'package:front_developer_test/models/place.dart';
 import 'package:front_developer_test/widgets/profile_pic_avatar.dart';
-import 'package:front_developer_test/widgets/top_bottom_headings.dart';
 
 ///widget used to display profile information for Place and Author.
 ///can be re-used in other areas of app.
