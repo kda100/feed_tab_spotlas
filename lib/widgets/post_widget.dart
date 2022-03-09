@@ -28,7 +28,7 @@ class PostWidget extends StatefulWidget {
 }
 
 class _PostWidgetState extends State<PostWidget> {
-  bool playLiked = false;
+  bool playLiked = false; //true == likedAnimation played
   late PostViewModel postViewModel;
 
   @override
