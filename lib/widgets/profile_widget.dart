@@ -10,14 +10,14 @@ import 'package:front_developer_test/widgets/top_bottom_headings.dart';
 
 class ProfileWidget extends StatelessWidget {
   final String photoUrl; //profile pic Url.
-  final Color color;
+  final Color profilePicBorderColor;
   final String topHeading;
   final String bottomHeading;
   final EdgeInsets padding;
 
   ProfileWidget.fromAuthor(
       {required Author author,
-      this.color = Colors.pink,
+      this.profilePicBorderColor = Colors.pink,
       this.padding = const EdgeInsets.all(12.0)})
       : photoUrl = author.authorPhotoUrl,
         topHeading = author.authorUsername,
@@ -25,7 +25,7 @@ class ProfileWidget extends StatelessWidget {
 
   ProfileWidget.fromPlace(
       {required Place place,
-      this.color = Colors.white,
+      this.profilePicBorderColor = Colors.white,
       this.padding = const EdgeInsets.all(12.0)})
       : photoUrl = place.placeLogoUrl ?? "",
         topHeading = place.placeName,
@@ -49,7 +49,7 @@ class ProfileWidget extends StatelessWidget {
           children: [
             ProfilePicAvatar(
               photoUrl: photoUrl,
-              borderColor: color,
+              borderColor: profilePicBorderColor,
             ),
             const SizedBox(
               width: 10,
