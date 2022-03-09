@@ -32,7 +32,7 @@ class _CustomCaptionState extends State<CustomCaption> {
       //username with description.
       children: [
         TextSpan(
-          text: widget.authorUsername,
+          text: "${widget.authorUsername} ",
           style: const TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
