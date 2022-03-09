@@ -10,13 +10,13 @@ import 'package:front_developer_test/widgets/top_bottom_headings.dart';
 ///can be re-used in other areas of app.
 
 class ProfileWidget extends StatelessWidget {
-  final String photoUrl; //profile pic Url.
-  final Color profilePicBorderColor;
+  final String? photoUrl; //profile pic Url.
+  final Color? profilePicBorderColor;
   final String topHeading;
   final String bottomHeading;
   final TextStyle? topHeadingStyle;
   final TextStyle? bottomHeadingStyle;
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
   final Decoration? decoration;
   final Widget profilePicPlaceHolder;
 
