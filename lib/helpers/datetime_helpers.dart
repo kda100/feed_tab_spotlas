@@ -4,7 +4,7 @@ import 'dart:math';
 
 class DateTimeHelpers {
   ///takes in a DateTime object and returns a string representation of the time after post.
-  ///can return "27 weeks ago" or "3 hours ago".
+  ///can return "27 weeks ago", "3 hours ago", "10 secs ago", etc.
   static String getTimeAfterPost({required DateTime createdAt}) {
     final now = DateTime.now();
     final diff = now.millisecondsSinceEpoch - createdAt.millisecondsSinceEpoch;
