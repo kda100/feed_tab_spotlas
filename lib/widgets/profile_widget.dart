@@ -35,7 +35,7 @@ class ProfileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: padding,
       child: DecoratedBox(
         decoration: BoxDecoration(
           boxShadow: [
