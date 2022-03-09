@@ -64,11 +64,21 @@ class ProfileWidget extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
-          TopBottomHeadings(
-            topHeading: topHeading,
-            bottomHeading: bottomHeading,
-            topHeadingStyle: topHeadingStyle,
-            bottomHeadingStyle: bottomHeadingStyle,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                topHeading,
+                style: topHeadingStyle ?? Theme.of(context).textTheme.subtitle1,
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Text(
+                bottomHeading,
+                style: bottomHeadingStyle ?? Theme.of(context).textTheme.subtitle2,
+              ),
+            ],
           )
         ],
       ),
