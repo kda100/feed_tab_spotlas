@@ -63,6 +63,8 @@ class ProfileWidget extends StatelessWidget {
           TopBottomHeadings(
             topHeading: topHeading,
             bottomHeading: bottomHeading,
+            topHeadingStyle: topHeadingStyle,
+            bottomHeadingStyle: bottomHeadingStyle,
           )
         ],
       ),
