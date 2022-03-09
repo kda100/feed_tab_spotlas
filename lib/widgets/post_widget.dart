@@ -119,7 +119,7 @@ class _PostWidgetState extends State<PostWidget> {
                 bottom: 0,
                 left: 0,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: ProfileWidget.fromPlace(
                     place: postViewModel.place,
                     decoration: decoration,
