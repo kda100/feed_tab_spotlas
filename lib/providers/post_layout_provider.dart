@@ -31,7 +31,7 @@ class PostLayoutProvider {
         _XXL *= 1.5;
         _XXXL *= 4 / 3;
         _XXXXL *= 4 / 3;
-      } else if (height < 926 && width < 428) {
+      } else {
         _XXXS *= 3;
         _XXS *= 3;
         _XS *= 3;
