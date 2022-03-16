@@ -19,7 +19,7 @@ class PostLayoutProvider {
     final double height = deviceSize.height;
     final double width = deviceSize.width;
 
-    if (height > 667 || width > 320) {
+    if (height > 667 && width > 320) {
       if (height < 812 && width < 375) {
         _XXXS *= 2;
         _XXS *= 2;
