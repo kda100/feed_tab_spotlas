@@ -32,6 +32,12 @@ class _PostWidgetState extends State<PostWidget> {
   bool playLiked = false;
   late PostViewModel postViewModel;
 
+  @override
+  void initState() {
+    postViewModel = widget.postViewModel;
+    super.initState();
+  }
+
   static final decoration = BoxDecoration(
     boxShadow: [
       BoxShadow(
@@ -40,12 +46,6 @@ class _PostWidgetState extends State<PostWidget> {
       )
     ],
   );
-
-  @override
-  void initState() {
-    postViewModel = widget.postViewModel;
-    super.initState();
-  }
 
   ///builds animation when double tapped.
   Widget _buildLikedAnimation() {
@@ -108,9 +108,7 @@ class _PostWidgetState extends State<PostWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ProfileWidget.fromPlace(
-                      place: postViewModel.place,
-                      decoration: decoration,
-                    ),
+                        place: postViewModel.place, decoration: decoration),
                     Padding(
                       padding: EdgeInsets.only(
                         left: postLayoutProvider.S,
