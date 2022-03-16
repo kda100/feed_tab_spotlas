@@ -29,7 +29,7 @@ class ProfileWidget extends StatelessWidget {
 
   static final headingShadows = [
     Shadow(
-      blurRadius: 20,
+      blurRadius: 10,
       color: Colors.black.withOpacity(0.75),
       offset: const Offset(3, 3),
     ),
@@ -49,47 +49,54 @@ class ProfileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final PostLayoutProvider postLayoutProvider =
         Provider.of<PostLayoutProvider>(context, listen: false);
-    return Container(
-      decoration: decoration,
-      child: Row(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(
-              postLayoutProvider.S,
+    return Padding(
+      padding: EdgeInsets.only(
+        left: postLayoutProvider.S,
+        bottom: postLayoutProvider.S,
+        top: postLayoutProvider.S,
+      ),
+      child: DecoratedBox(
+        decoration: decoration ?? const BoxDecoration(),
+        child: Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(
+                right: postLayoutProvider.S,
+              ),
+              child: ProfilePicAvatar(
+                photoUrl: profilePicUrl,
+                borderColor: profilePicBorderColor,
+                placeHolder: profilePicPlaceHolder,
+              ),
             ),
-            child: ProfilePicAvatar(
-              photoUrl: profilePicUrl,
-              borderColor: profilePicBorderColor,
-              placeHolder: profilePicPlaceHolder,
-            ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                topHeading,
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  shadows: headingShadows,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  topHeading,
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    shadows: headingShadows,
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: postLayoutProvider.XXXS,
-              ),
-              Text(
-                bottomHeading,
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.bold,
-                  shadows: headingShadows,
+                SizedBox(
+                  height: postLayoutProvider.XXXS,
                 ),
-              ),
-            ],
-          )
-        ],
+                Text(
+                  bottomHeading,
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold,
+                    shadows: headingShadows,
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
