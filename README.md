@@ -1,2 +1,2 @@
-# Feed Tab Spotlas
-In this repository you will find the dart files and screen recording used in a Flutter project to develop the UI of a feed tab for Spotlas social media app.
+# Social Media App Feed Tab
+This repository contains the code pertaining to the development of a social media feed tab containing various posts using Flutter. The app uses http requests to fetch data as a json object to produce the user interface for each post. The app uses pagination to facilitate infinite scrolling of posts and uses animations for the actions of liking posts, scrolling through images of each post and expansion of each posts captions.
