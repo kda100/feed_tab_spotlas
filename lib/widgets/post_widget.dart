@@ -35,7 +35,7 @@ class _PostWidgetState extends State<PostWidget> {
   static final decoration = BoxDecoration(
     boxShadow: [
       BoxShadow(
-        color: Colors.black.withOpacity(0.35),
+        color: Colors.black.withOpacity(0.38),
         blurRadius: 25,
       )
     ],
