@@ -75,7 +75,7 @@ class ProfileWidget extends StatelessWidget {
                 Text(
                   topHeading,
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     shadows: headingShadows,
@@ -87,7 +87,7 @@ class ProfileWidget extends StatelessWidget {
                 Text(
                   bottomHeading,
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     color: Colors.grey,
                     fontWeight: FontWeight.bold,
                     shadows: headingShadows,
