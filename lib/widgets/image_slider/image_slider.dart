@@ -11,10 +11,12 @@ import 'image_slider_dots.dart';
 class ImageSlider extends StatefulWidget {
   final List<String> photoUrls;
   final Color backgroundColor;
+  final double dotSpacing;
 
   ImageSlider({
     required this.photoUrls,
     this.backgroundColor = Colors.black,
+    this.dotSpacing = 4,
   });
 
   @override
@@ -76,6 +78,7 @@ class _ImageSliderState extends State<ImageSlider> {
               //shows which image in list is being shown.
               selectedIndex: selectedIndex,
               photosNum: widget.photoUrls.length,
+              dotSpacing: widget.dotSpacing,
             ),
           ),
       ],
