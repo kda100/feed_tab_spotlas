@@ -41,7 +41,7 @@ class _PostWidgetState extends State<PostWidget> {
   static final decoration = BoxDecoration(
     boxShadow: [
       BoxShadow(
-        color: Colors.black.withOpacity(0.38),
+        color: Colors.black.withOpacity(0.34),
         blurRadius: 25,
       )
     ],
@@ -89,6 +89,7 @@ class _PostWidgetState extends State<PostWidget> {
                 child: ImageSlider(
                   //post images
                   photoUrls: postViewModel.photoUrls,
+                  dotSpacing: postLayoutProvider.XXS,
                 ),
               ),
               Positioned(
