@@ -7,7 +7,7 @@ class PostLayoutProvider {
   double _XXXS = 1;
   double _XXS = 2;
   double _XS = 4;
-  double _S = 4;
+  double _S = 8;
   double _M = 12;
   double _L = 16;
   double _XL = 24;
