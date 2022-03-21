@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:feed_tab_spotlas/models/feed_response.dart';
 import 'package:feed_tab_spotlas/providers/feed_provider.dart';
 import 'package:feed_tab_spotlas/providers/post_layout_provider.dart';
@@ -60,36 +62,42 @@ class _FeedPageState extends State<FeedPage> {
                 child: Text(feedResponse.message),
               );
             }
-            return RefreshIndicator(
-              onRefresh: () async {
-                feedProvider.refreshFeed();
+            final feedListWidget = ListView.builder(
+              //posts.
+
+              cacheExtent: 100,
+              controller: _controller,
+              physics: const BouncingScrollPhysics(),
+              itemCount: feedProvider.numberOfPosts + 1,
+              itemBuilder: (context, index) {
+                if (index != feedProvider.numberOfPosts) {
+                  return PostWidget(
+                    //widget is built when user scrolls to it.
+                    postViewModel: feedProvider.getPostViewModel(
+                      index:
+                      index, //uses index of List View to retrieve the required PostViewModel.
+                    ),
+                  );
+                } else {
+                  return const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Center(
+                      child: CircularProgressIndicator.adaptive(),
+                    ),
+                  );
+                }
               },
-              child: ListView.builder(
-                //posts.
-                cacheExtent: 100,
-                controller: _controller,
-                physics: const BouncingScrollPhysics(),
-                itemCount: feedProvider.numberOfPosts + 1,
-                itemBuilder: (context, index) {
-                  if (index != feedProvider.numberOfPosts) {
-                    return PostWidget(
-                      //widget is built when user scrolls to it.
-                      postViewModel: feedProvider.getPostViewModel(
-                        index:
-                            index, //uses index of List View to retrieve the required PostViewModel.
-                      ),
-                    );
-                  } else {
-                    return const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Center(
-                        child: CircularProgressIndicator.adaptive(),
-                      ),
-                    );
-                  }
-                },
-              ),
             );
+            if (Platform.isAndroid) {
+              return RefreshIndicator(
+                onRefresh: () async {
+                  feedProvider.refreshFeed();
+                },
+                child: feedListWidget
+              );
+            } else {
+              return feedListWidget;
+            }
           }
         },
       ),
