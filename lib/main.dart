@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,25 +18,39 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        backgroundColor: Colors.white,
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: const AppBarTheme(
-          centerTitle: true,
-          color: Colors.white,
-          elevation: 0,
-          titleTextStyle: TextStyle(
-            fontWeight: FontWeight.w900,
-            fontSize: 16,
+    return PlatformApp(
+      title: 'Feed tab spotlas app',
+      cupertino: (_, __) => CupertinoAppData(
+        theme: const CupertinoThemeData(
+          barBackgroundColor: Colors.white,
+          scaffoldBackgroundColor: Colors.white,
+          textTheme: CupertinoTextThemeData(
+            primaryColor: Colors.black,
+            navTitleTextStyle: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w900,
+              fontSize: 16,
+            ),
           ),
         ),
-        textTheme: const TextTheme(
-          headline4: TextStyle(
-            fontSize: 16,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
+      ),
+      material: (_, __) => MaterialAppData(
+        theme: ThemeData(
+          backgroundColor: Colors.white,
+          scaffoldBackgroundColor: Colors.white,
+          appBarTheme: const AppBarTheme(
+            color: Colors.white,
+            titleTextStyle: TextStyle(
+              fontWeight: FontWeight.w900,
+              fontSize: 16,
+            ),
+          ),
+          textTheme: const TextTheme(
+            headline4: TextStyle(
+              fontSize: 16,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
