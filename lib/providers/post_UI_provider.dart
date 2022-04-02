@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-
-///provider used to provide dimensions and spacings for widgets contained in each post of feed
-
 class PostUIProvider {
   double _XXXXS = 1; //these are all different spacing used in each post widget.
   double _XXXS = 1;
@@ -14,9 +10,9 @@ class PostUIProvider {
   double _XXL = 32;
   double _XXXL = 48;
   double _XXXXL = 96;
-  double _XXXXXL = 130;
+  double _XXXXXL = 177.5;
   double _captionTextSize = 14;
-  double _headerTextSize = 16;
+  double _headerTextSize = 15;
   double _iconSize = 30;
   double _likeAnimationSize = 100;
 
@@ -37,10 +33,10 @@ class PostUIProvider {
         _XXL *= 1.5;
         _XXXL *= 4 / 3;
         _XXXXL *= 4 / 3;
-        _XXXXXL *= 1.1;
-        _captionTextSize += 2;
-        _headerTextSize += 2;
-        _iconSize += 2.5;
+        _XXXXXL += 5;
+        _captionTextSize += 1;
+        _headerTextSize += 1;
+        _iconSize += 1;
         _likeAnimationSize += 10;
       } else {
         //large phone size.
@@ -54,10 +50,10 @@ class PostUIProvider {
         _XXL *= 1.75;
         _XXXL *= 5 / 3;
         _XXXXL *= 5 / 3;
-        _XXXXXL *= 1.2;
+        _XXXXXL += 10;
         _captionTextSize += 2;
         _headerTextSize += 2;
-        _iconSize += 5;
+        _iconSize += 2;
         _likeAnimationSize += 20;
       }
     }
