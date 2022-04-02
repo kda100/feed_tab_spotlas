@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+
+///provider used to provide dimensions and spacings for widgets contained in each post of feed
+
 class PostUIProvider {
   double _XXXXS = 1; //these are all different spacing used in each post widget.
   double _XXXS = 1;
