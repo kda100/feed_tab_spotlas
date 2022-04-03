@@ -31,6 +31,10 @@ class MyApp extends StatelessWidget {
               fontWeight: FontWeight.w900,
               fontSize: 17,
             ),
+            textStyle: TextStyle(
+              fontSize: 15,
+              color: CupertinoColors.black,
+            ),
           ),
         ),
       ),
