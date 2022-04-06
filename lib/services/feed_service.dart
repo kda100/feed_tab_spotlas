@@ -7,6 +7,13 @@ import 'package:http/http.dart' as http;
 ///This class returns the data to the Feed Repository for data manipulation.
 
 class FeedService {
+  static final FeedService _instance = FeedService._();
+
+  FeedService._();
+
+  factory FeedService() {
+    return _instance;
+  }
   ///makes a request to get feed data, it can return a json object or a null object.
   ///It is possible to return responses for each specific response status code.
   ///But client only needs to know whether the response has been successful or failed.
