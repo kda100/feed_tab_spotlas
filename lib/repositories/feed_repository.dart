@@ -8,6 +8,14 @@ import 'package:feed_tab_spotlas/services/feed_service.dart';
 ///Then notifies the Feed Provider that the data has been received.
 
 class FeedRepository {
+  static final FeedRepository _instance = FeedRepository._();
+
+  FeedRepository._();
+
+  factory FeedRepository() {
+    return _instance;
+  }
+  
   final FeedService _feedService = FeedService();
   int _page = 1;
   final List<Post> _feed = []; //where posts are stored.
